@@ -11,8 +11,6 @@ dice.style.display = "none";
 rollBtn.addEventListener("click", () => {
    if (rollBtn.textContent === "Roll") {
       let randomNumber = Math.floor(Math.random() * 6 + 1);
-      dice.style.display = "block";
-      dice.textContent = `${randomNumber}`;
       checkNumber(randomNumber);
    } else if (rollBtn.textContent === "Start again") {
       resetGame();
@@ -33,6 +31,7 @@ const resetGame = () => {
 // function to apply condition to generated random number
 const checkNumber = (randomNumber) => {
    if (randomNumber === 1) {
+      dice.style.display = "block";
       scoreInput.textContent = 0;
       playerStatus.textContent = "You lose!";
       rollBtn.textContent = "Start again";
