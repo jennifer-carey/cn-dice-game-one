@@ -5,6 +5,7 @@ const rollBtn = document.querySelector("#roll-button");
 const playerStatus = document.querySelector("#player-status");
 let score = 0;
 
+
 //function to apply condition to dice number
 while (score < 20) {
    let randomNumber = Math.floor(Math.random() * 6 + 1);
@@ -31,5 +32,13 @@ rollBtn.addEventListener("click", () =>{
 
 })
 
-// remember to reset score to zero when game ends
-console.log(score);
+// function to reset game
+const resetGame = () => {
+   if (rollBtn.textContent === "Start again") {
+      score = 0;
+      scoreInput.textContent = "0";
+      rollBtn.textContent = "Roll";
+      playerStatus.textContent = "Player 1";
+      //insert code to hide dice
+   }
+}
