@@ -5,14 +5,27 @@ const rollBtn = document.querySelector("#roll-button");
 const playerStatus = document.querySelector("#player-status");
 let score = 0;
 
+dice.style.display = "none";
 
-//function to apply condition to dice number
-while (score < 20) {
+// function to reset game
+const resetGame = () => {
+   if (rollBtn.textContent === "Start again") {
+      score = 0;
+      scoreInput.textContent = "0";
+      rollBtn.textContent = "Roll";
+      playerStatus.textContent = "Player 1";
+      dice.style.display = "none";
+   }
+}
+
+// add button event listener on click with function
+rollBtn.addEventListener("click", () =>{
    let randomNumber = Math.floor(Math.random() * 6 + 1);
    console.log(randomNumber);
+   dice.style.display = "block";
    dice.textContent = `${randomNumber}`;
       if (randomNumber === 1) {
-         score = 0;
+         scoreInput.textContent = 0;
          playerStatus.textContent = "You lose!";
          rollBtn.textContent = "Start again";
       } else {
@@ -23,22 +36,9 @@ while (score < 20) {
             rollBtn.textContent = "Start again";
          }
       }
-}
-
-// function to display dice
-
-// add button event listener on click with function
-rollBtn.addEventListener("click", () =>{
-
 })
 
-// function to reset game
-const resetGame = () => {
-   if (rollBtn.textContent === "Start again") {
-      score = 0;
-      scoreInput.textContent = "0";
-      rollBtn.textContent = "Roll";
-      playerStatus.textContent = "Player 1";
-      //insert code to hide dice
-   }
-}
+
+
+
+
