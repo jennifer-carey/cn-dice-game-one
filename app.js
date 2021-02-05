@@ -2,38 +2,31 @@
 const scoreInput = document.querySelector("#score");
 const dice = document.querySelector("#dice");
 const rollBtn = document.querySelector("#roll-button");
+const playerStatus = document.querySelector("#player-status");
 let score = 0;
 
-
-// add button event listener on click with function
-rollBtn.addEventListener("click", () =>{
-   while (score < 20) {
-      let randomNumber = Math.floor(Math.random() * 6 + 1);
-      console.log(randomNumber);
-      dice.textContent = `${randomNumber}`;
-      
-      // apply condition according to randomNumber produced by the dice
+//function to apply condition to dice number
+while (score < 20) {
+   let randomNumber = Math.floor(Math.random() * 6 + 1);
+   console.log(randomNumber);
+   dice.textContent = `${randomNumber}`;
       if (randomNumber === 1) {
-         // dice appears in DOM with randomNumber
-         // dice.textContent = `${randomNumber}`;
          score = 0;
-         // you lose text appears in place of Player 1 text in the DOM so replace line below
-         console.log("You lost!");
-         // roll button is removed from the DOM
-         // start again button appears above you lost text
+         playerStatus.textContent = "You lose!";
       } else {
          score += randomNumber;
          scoreInput.textContent = `${score}`;
          if (score >= 20) {
-            // dice appears in DOM with randomNumber
-            // dice.textContent = `${randomNumber}`;
-            // you win text appears in place of Player 1 text in the DOM so replace line below
-            console.log("You win!");
-            // roll button is removed from the DOM
-            // start again button appears above you win text
+            playerStatus.textContent = "You win!";
          }
       }
-   }
+}
+
+// function to display dice
+
+// add button event listener on click with function
+rollBtn.addEventListener("click", () =>{
+
 })
 
 // remember to reset score to zero when game ends
