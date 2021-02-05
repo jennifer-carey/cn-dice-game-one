@@ -13,11 +13,13 @@ while (score < 20) {
       if (randomNumber === 1) {
          score = 0;
          playerStatus.textContent = "You lose!";
+         rollBtn.textContent = "Start again";
       } else {
          score += randomNumber;
          scoreInput.textContent = `${score}`;
          if (score >= 20) {
             playerStatus.textContent = "You win!";
+            rollBtn.textContent = "Start again";
          }
       }
 }
