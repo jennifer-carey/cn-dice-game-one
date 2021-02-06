@@ -22,12 +22,21 @@ body {
    border: 5px ridge lightgrey;
    text-align: center;
    padding: 1em;
-   width: 400px;
-   height: 400px;
+   width: 350px;
+   height: 350px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    align-items: center;
+}
+
+.game-info p:first-child {
+   padding-bottom: 1em;
+}
+
+.dice {
+   width: 150px;
+   height: 150px;
 }
 
 .roll-button {
@@ -36,6 +45,6 @@ body {
    color: black;
    font-family: 'VT323', monospace;
    font-size: 1rem;
-   padding: 0.5em 1em;
+   padding: 0.5em;
 }
 
