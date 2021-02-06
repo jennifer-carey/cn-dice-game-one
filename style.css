@@ -18,6 +18,20 @@ body {
    align-items: center;
 }
 
+h1 {
+   padding-bottom: 0.5em;
+}
+
+ul {
+   padding-bottom: 2em;
+}
+
+.game-rules-list {
+   font-weight: normal;
+   list-style-position: inside;
+   list-style-type: square;
+}
+
 .content-square {
    border: 5px ridge lightgrey;
    text-align: center;
@@ -48,3 +62,4 @@ body {
    padding: 0.5em;
 }
 
+}
