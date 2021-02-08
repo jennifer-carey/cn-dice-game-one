@@ -45,7 +45,6 @@ const checkNumber = (randomNumber) => {
          rollBtn.textContent = "Start again";
       }
    }
-
 }
 
 
